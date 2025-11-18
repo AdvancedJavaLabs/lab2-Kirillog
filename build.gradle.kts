@@ -1,5 +1,6 @@
 plugins {
-    kotlin("jvm") version "1.9.20"
+    kotlin("jvm") version "2.1.0"
+    kotlin("plugin.serialization") version "2.1.0"
     application
 }
 
@@ -8,11 +9,14 @@ version = "1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
+    maven { url = uri("https://jitpack.io") }
 }
 
 dependencies {
-    implementation("javax.jms:jms-api:2.0.1")
-    implementation("org.apache.activemq:activemq-broker:6.1.1")
+    implementation("dev.kourier:amqp-client:0.2.8")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.8.0")
+    implementation("com.github.apanimesh061:VaderSentimentJava:1.1.1")
+    implementation("org.apache.opennlp:opennlp-tools:2.5.6.1")
     testImplementation(kotlin("test"))
 }
 
